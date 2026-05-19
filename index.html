@@ -96,7 +96,7 @@
     /* HERO */
     #hero {
       min-height: 100vh;
-      padding-top: 64px;
+      padding-top: 72px;
       display: grid;
       grid-template-columns: 1fr 1fr;
     }
@@ -120,12 +120,13 @@
     }
 
     .hero-name {
-      font-size: clamp(4rem, 8vw, 7rem);
+      font-size: clamp(3rem, 5.5vw, 5.5rem);
       font-weight: 900;
       color: var(--white);
       text-transform: uppercase;
-      line-height: 0.9;
-      letter-spacing: -3px;
+      line-height: 0.95;
+      letter-spacing: -2px;
+      white-space: nowrap;
     }
 
     .hero-name .yellow { color: var(--yellow); }
@@ -773,8 +774,7 @@
     <div class="hero-left">
       <div class="hero-issue">Portfolio · 2025 · Vol. 01</div>
       <div class="hero-name">
-        <div>PRE</div>
-        <div class="yellow">RIT</div>
+        <div>PRE<span class="yellow">RIT</span></div>
         <div class="outline">ARYA</div>
       </div>
       <div class="hero-year">KIIT UNIVERSITY · CSE · 2023–2027</div>
