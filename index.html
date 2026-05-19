@@ -96,7 +96,8 @@
     /* HERO */
     #hero {
       min-height: 100vh;
-      padding-top: 72px;
+      padding-top: 0;
+      margin-top: 64px;
       display: grid;
       grid-template-columns: 1fr 1fr;
     }
@@ -672,6 +673,7 @@
     #contact .section-header { border-color: #374151; justify-content: center; }
     #contact .section-num { color: #4b5563; }
     #contact .section-title { color: var(--white); }
+    #contact .section-title span { -webkit-text-stroke: 2px var(--yellow); color: transparent; }
 
     .contact-big {
       font-size: clamp(1.2rem, 3vw, 2rem);
