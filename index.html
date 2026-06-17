@@ -3,7 +3,19 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Prerit Arya — Developer & AI Enthusiast</title>
+  <title>Prerit Arya — Developer & AI/ML</title>
+
+  <!-- SEO + Social -->
+  <meta name="description" content="Prerit Arya — B.Tech CSE student at KIIT building AI/ML systems, LLM pipelines, and IoT computer-vision projects. Open to internships."/>
+  <meta name="author" content="Prerit Arya"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:title" content="Prerit Arya — Developer & AI/ML"/>
+  <meta property="og:description" content="B.Tech CSE student building AI/ML systems, LLM pipelines, and IoT computer-vision projects. Open to internships."/>
+  <meta name="twitter:card" content="summary_large_image"/>
+
+  <!-- Inline SVG favicon (yellow P on black) -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230a0a0a'/%3E%3Ctext x='16' y='23' font-family='Arial' font-size='20' font-weight='900' fill='%23f59e0b' text-anchor='middle'%3EP%3C/text%3E%3C/svg%3E"/>
+
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"/>
   <style>
     :root {
@@ -33,6 +45,14 @@
     ::-webkit-scrollbar { width: 8px; }
     ::-webkit-scrollbar-track { background: var(--white); }
     ::-webkit-scrollbar-thumb { background: var(--black); }
+
+    /* ICONS */
+    .ico {
+      display: inline-block;
+      vertical-align: middle;
+      flex-shrink: 0;
+    }
+    .ico svg { display: block; width: 100%; height: 100%; }
 
     /* STRIPE TOP */
     .stripe {
@@ -93,6 +113,21 @@
 
     .nav-links a:hover { background: var(--black); color: var(--yellow); }
 
+    /* MOBILE NAV TOGGLE */
+    .nav-toggle {
+      display: none;
+      width: 40px;
+      height: 36px;
+      border: var(--border);
+      background: var(--white);
+      cursor: pointer;
+      align-items: center;
+      justify-content: center;
+      color: var(--black);
+      box-shadow: 3px 3px 0 var(--black);
+    }
+    .nav-toggle:active { box-shadow: none; transform: translate(3px,3px); }
+
     /* HERO */
     #hero {
       min-height: 100vh;
@@ -149,6 +184,7 @@
       flex-direction: column;
       justify-content: space-between;
       padding: 3rem;
+      gap: 1.5rem;
     }
 
     .hero-tagline {
@@ -170,13 +206,13 @@
     .hero-tagline .hl-green { background: var(--green); color: #fff; padding: 0 6px; }
 
     .hero-bio {
-      font-size: 14px;
+      font-size: 15px;
       line-height: 1.7;
       color: #4b5563;
-      max-width: 420px;
+      max-width: 440px;
       border-left: 4px solid var(--yellow);
       padding-left: 1rem;
-      margin-top: 1.5rem;
+      margin-top: 1.25rem;
     }
 
     .hero-meta {
@@ -209,7 +245,11 @@
       font-size: 13px;
       font-weight: 700;
       text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 6px;
     }
+    .meta-val .ico { width: 14px; height: 14px; }
 
     .hero-actions {
       display: flex;
@@ -233,6 +273,7 @@
       align-items: center;
       gap: 8px;
     }
+    .btn .ico { width: 15px; height: 15px; }
 
     .btn-black { background: var(--black); color: var(--yellow); }
     .btn-black:hover { background: var(--yellow); color: var(--black); }
@@ -280,7 +321,7 @@
     }
 
     .about-text p {
-      font-size: 15px;
+      font-size: 16px;
       line-height: 1.8;
       color: #374151;
       margin-bottom: 1rem;
@@ -316,6 +357,9 @@
     }
 
     @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
+    @media (prefers-reduced-motion: reduce) {
+      * { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+    }
 
     .about-card-body { padding: 0; }
 
@@ -346,55 +390,6 @@
       text-transform: uppercase;
       font-size: 11px;
     }
-
-    .music-widget {
-      border-top: var(--border);
-      padding: 14px;
-      background: var(--yellow);
-    }
-
-    .music-label {
-      font-family: var(--mono);
-      font-size: 9px;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      color: rgba(0,0,0,0.5);
-      margin-bottom: 6px;
-    }
-
-    .music-track {
-      font-family: var(--mono);
-      font-size: 13px;
-      font-weight: 700;
-      text-transform: uppercase;
-    }
-
-    .music-bars {
-      display: flex;
-      align-items: flex-end;
-      gap: 3px;
-      height: 20px;
-      margin-top: 8px;
-    }
-
-    .bar {
-      width: 5px;
-      background: var(--black);
-      border-radius: 1px;
-      animation: eq 0.7s ease-in-out infinite alternate;
-    }
-
-    .bar:nth-child(1){animation-delay:0s;height:30%}
-    .bar:nth-child(2){animation-delay:.08s;height:65%}
-    .bar:nth-child(3){animation-delay:.16s;height:100%}
-    .bar:nth-child(4){animation-delay:.12s;height:50%}
-    .bar:nth-child(5){animation-delay:.04s;height:80%}
-    .bar:nth-child(6){animation-delay:.2s;height:40%}
-    .bar:nth-child(7){animation-delay:.1s;height:70%}
-    .bar:nth-child(8){animation-delay:.18s;height:90%}
-    .bar:nth-child(9){animation-delay:.06s;height:55%}
-
-    @keyframes eq { from{height:15%} to{height:100%} }
 
     /* SKILLS */
     #skills { background: var(--black); max-width: 100%; padding: 5rem 2.5rem; }
@@ -495,12 +490,32 @@
       border-right: var(--border);
     }
 
+    .project-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 0.5rem;
+      flex-wrap: wrap;
+    }
+
     .project-name {
       font-size: 22px;
       font-weight: 900;
       text-transform: uppercase;
       letter-spacing: -0.5px;
-      margin-bottom: 0.5rem;
+    }
+
+    .project-type {
+      font-family: var(--mono);
+      font-size: 9px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      padding: 3px 8px;
+      border: 2px solid var(--black);
+      color: var(--black);
+      white-space: nowrap;
     }
 
     .project-desc {
@@ -544,7 +559,11 @@
       transition: all 0.15s;
       background: var(--white);
       white-space: nowrap;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
     }
+    .project-link .ico { width: 14px; height: 14px; }
 
     .project-link:hover {
       background: var(--black);
@@ -578,8 +597,9 @@
     .cert-card:nth-last-child(-n+2) { border-bottom: none; }
 
     .cert-icon-row {
-      font-size: 28px;
-      margin-bottom: 0.75rem;
+      width: 34px; height: 34px;
+      margin-bottom: 0.85rem;
+      color: var(--black);
     }
 
     .cert-name {
@@ -621,13 +641,13 @@
       transform: translate(3px,3px);
     }
 
-    /* ACHIEVEMENTS / HACKATHONS */
-    #hackathons { background: #111827; max-width: 100%; padding: 5rem 2.5rem; }
-    #hackathons .inner { max-width: 1100px; margin: 0 auto; }
-    #hackathons .section-header { border-color: #374151; }
-    #hackathons .section-num { color: #4b5563; }
-    #hackathons .section-title { color: var(--white); }
-    #hackathons .section-title span { -webkit-text-stroke: 2px var(--yellow); color: transparent; }
+    /* EXPERIENCE / HACKATHON */
+    #experience { background: #111827; max-width: 100%; padding: 5rem 2.5rem; }
+    #experience .inner { max-width: 1100px; margin: 0 auto; }
+    #experience .section-header { border-color: #374151; }
+    #experience .section-num { color: #4b5563; }
+    #experience .section-title { color: var(--white); }
+    #experience .section-title span { -webkit-text-stroke: 2px var(--yellow); color: transparent; }
 
     .hackathon-card {
       border: var(--border);
@@ -646,10 +666,9 @@
       align-items: center;
       justify-content: center;
       padding: 1.5rem 1.2rem;
-      font-family: var(--mono);
-      font-size: 28px;
-      font-weight: 700;
+      width: 76px;
     }
+    .hackathon-badge .ico { width: 34px; height: 34px; }
 
     .hackathon-body {
       padding: 1.75rem 2rem;
@@ -700,7 +719,7 @@
 
     .rank-num {
       font-family: var(--mono);
-      font-size: 30px;
+      font-size: 26px;
       font-weight: 900;
       color: var(--yellow);
       line-height: 1;
@@ -722,6 +741,7 @@
       gap: 0;
       border: var(--border);
       box-shadow: var(--shadow);
+      margin-top: 2.5rem;
     }
 
     .achieve-card {
@@ -730,6 +750,7 @@
       border-bottom: var(--border);
       text-align: center;
       transition: background 0.15s;
+      background: var(--white);
     }
 
     .achieve-card:hover { background: var(--black); }
@@ -781,13 +802,6 @@
 
     .contact-big span { color: var(--yellow); }
 
-    .contact-links {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 0;
-    }
-
     .contact-link {
       font-family: var(--mono);
       font-size: 12px;
@@ -805,51 +819,10 @@
       align-items: center;
       gap: 8px;
     }
+    .contact-link .ico { width: 16px; height: 16px; }
 
     .contact-link:hover { background: var(--yellow); color: var(--black); border-color: var(--yellow); }
 
-    /* FOOTER */
-    footer {
-      background: var(--yellow);
-      border-top: var(--border);
-      padding: 1.5rem 2.5rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .footer-left {
-      font-family: var(--mono);
-      font-size: 12px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-
-    .footer-right {
-      font-family: var(--mono);
-      font-size: 11px;
-      color: rgba(0,0,0,0.5);
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-
-    /* RESPONSIVE */
-    @media (max-width: 768px) {
-      #hero { grid-template-columns: 1fr; }
-      .hero-left { min-height: 50vh; }
-      .about-grid { grid-template-columns: 1fr; }
-      .nav-links { display: none; }
-      .project-item { grid-template-columns: 1fr; }
-      .project-num-col { writing-mode: horizontal-tb; min-width: auto; padding: 0.75rem 1.2rem; font-size: 14px; }
-      .achieve-grid { grid-template-columns: repeat(2,1fr); }
-      .achieve-card:nth-child(3n) { border-right: var(--border); }
-      .achieve-card:nth-child(2n) { border-right: none; }
-      .hackathon-card { grid-template-columns: 1fr; }
-      .hackathon-badge { writing-mode: horizontal-tb; padding: 0.75rem 1.2rem; font-size: 16px; }
-      .hackathon-body { border-left: none; border-right: none; border-top: 3px solid var(--yellow); border-bottom: 3px solid var(--yellow); }
-      footer { flex-direction: column; gap: 8px; text-align: center; }
-    }
     /* CONTACT FORM */
     #contact form { max-width: 700px; margin: 0 auto; }
 
@@ -864,6 +837,7 @@
       border: var(--border);
       margin-right: -3px;
       margin-bottom: -3px;
+      text-align: left;
     }
 
     .form-label {
@@ -922,12 +896,22 @@
       cursor: pointer;
       box-shadow: 4px 4px 0 var(--yellow);
       transition: all 0.15s;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
     }
+    .submit-btn .ico { width: 14px; height: 14px; }
 
     .submit-btn:hover {
       background: var(--white);
       box-shadow: none;
       transform: translate(4px, 4px);
+    }
+
+    /* Visible keyboard focus */
+    a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
+      outline: 3px solid var(--blue);
+      outline-offset: 2px;
     }
 
     .success-box {
@@ -941,10 +925,9 @@
     }
 
     .success-icon {
-      font-size: 3rem;
+      width: 48px; height: 48px;
       color: var(--green);
-      font-weight: 900;
-      margin-bottom: 1rem;
+      margin: 0 auto 1rem;
     }
 
     .success-title {
@@ -965,24 +948,117 @@
       letter-spacing: 1px;
     }
 
+    /* FOOTER */
+    footer {
+      background: var(--yellow);
+      border-top: var(--border);
+      padding: 1.5rem 2.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-left {
+      font-family: var(--mono);
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .footer-right {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: rgba(0,0,0,0.5);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      nav { padding: 0 1.25rem; }
+      .nav-toggle { display: flex; }
+      .nav-links {
+        position: fixed;
+        top: 64px; left: 0; right: 0;
+        flex-direction: column;
+        background: var(--white);
+        border-bottom: var(--border);
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.25s ease;
+      }
+      .nav-links.open { max-height: 420px; }
+      .nav-links a {
+        border: none;
+        border-bottom: var(--border);
+        margin-left: 0;
+        padding: 14px 1.25rem;
+        font-size: 13px;
+      }
+      #hero { grid-template-columns: 1fr; }
+      .hero-left { min-height: 50vh; }
+      .hero-right { padding: 2rem 1.25rem; }
+      section { padding: 3.5rem 1.25rem; }
+      #skills, #certifications, #experience, #contact { padding: 3.5rem 1.25rem; }
+      .about-grid { grid-template-columns: 1fr; }
+      .certs-grid { grid-template-columns: 1fr; }
+      .cert-card { border-right: none !important; }
+      .project-item { grid-template-columns: 1fr; }
+      .project-num-col { writing-mode: horizontal-tb; min-width: auto; padding: 0.75rem 1.2rem; font-size: 14px; }
+      .achieve-grid { grid-template-columns: repeat(2,1fr); }
+      .achieve-card:nth-child(3n) { border-right: var(--border); }
+      .achieve-card:nth-child(2n) { border-right: none; }
+      .hackathon-card { grid-template-columns: 1fr; }
+      .hackathon-badge { width: 100%; padding: 0.75rem; }
+      .hackathon-body { border-left: none; border-right: none; border-top: 3px solid var(--yellow); border-bottom: 3px solid var(--yellow); }
+      footer { flex-direction: column; gap: 8px; text-align: center; }
+    }
   </style>
 </head>
 <body>
 
   <div class="stripe"></div>
 
+  <!-- ICON DEFINITIONS (reusable SVG symbols, hand-drawn line style) -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <!-- line icons: inherit color via currentColor -->
+      <g id="i-bolt"><path d="M13 2 4 14h6l-1 8 9-12h-6z" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linejoin="round" stroke-linecap="round"/></g>
+      <g id="i-mail"><rect x="3" y="5" width="18" height="14" rx="1.5" fill="none" stroke="currentColor" stroke-width="2.1"/><path d="M4 7l8 6 8-6" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/></g>
+      <g id="i-pin"><path d="M12 21s7-6.3 7-11a7 7 0 0 0-14 0c0 4.7 7 11 7 11z" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linejoin="round"/><circle cx="12" cy="10" r="2.4" fill="none" stroke="currentColor" stroke-width="2.1"/></g>
+      <g id="i-music"><path d="M9 18V5l11-2v12" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linejoin="round" stroke-linecap="round"/><ellipse cx="6" cy="18" rx="3" ry="2.6" fill="none" stroke="currentColor" stroke-width="2.1"/><ellipse cx="17" cy="15" rx="3" ry="2.6" fill="none" stroke="currentColor" stroke-width="2.1"/></g>
+      <g id="i-download"><path d="M12 3v12" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"/><path d="M7 10l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/><path d="M4 20h16" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"/></g>
+      <g id="i-arrow"><path d="M5 12h13" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"/><path d="M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/></g>
+      <g id="i-check"><path d="M5 13l4 4L19 7" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></g>
+      <!-- cert / section icons -->
+      <g id="i-chart"><path d="M4 4v16h16" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"/><rect x="7" y="12" width="2.6" height="5" fill="currentColor"/><rect x="11.7" y="8" width="2.6" height="9" fill="currentColor"/><rect x="16.4" y="5" width="2.6" height="12" fill="currentColor"/></g>
+      <g id="i-cloud"><path d="M7 18a4 4 0 0 1-.4-8A5.5 5.5 0 0 1 17 9.2 3.8 3.8 0 0 1 17.5 18z" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linejoin="round"/></g>
+      <g id="i-chip"><rect x="7" y="7" width="10" height="10" rx="1.5" fill="none" stroke="currentColor" stroke-width="2.1"/><rect x="10" y="10" width="4" height="4" fill="currentColor"/><path d="M10 7V4M14 7V4M10 20v-3M14 20v-3M4 10h3M4 14h3M17 10h3M17 14h3" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"/></g>
+      <g id="i-robot"><rect x="5" y="8" width="14" height="11" rx="2" fill="none" stroke="currentColor" stroke-width="2.1"/><path d="M12 8V4" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"/><circle cx="12" cy="3" r="1.4" fill="currentColor"/><circle cx="9.5" cy="13" r="1.3" fill="currentColor"/><circle cx="14.5" cy="13" r="1.3" fill="currentColor"/><path d="M3 12v3M21 12v3" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"/></g>
+      <g id="i-building"><path d="M3 21h18" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"/><path d="M12 3 4 8h16z" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linejoin="round"/><path d="M6 11v8M10 11v8M14 11v8M18 11v8" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"/></g>
+      <g id="i-globe"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2.1"/><path d="M3 12h18" stroke="currentColor" stroke-width="2.1"/><path d="M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18" fill="none" stroke="currentColor" stroke-width="2.1"/></g>
+      <g id="i-target"><circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="2.1"/><circle cx="12" cy="12" r="4.5" fill="none" stroke="currentColor" stroke-width="2.1"/><circle cx="12" cy="12" r="1.4" fill="currentColor"/></g>
+      <!-- brand marks (official logos, filled) -->
+      <g id="i-github"><path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222 0 1.606-.014 2.898-.014 3.293 0 .322.216.694.825.576C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></g>
+      <g id="i-linkedin"><path fill="currentColor" d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></g>
+    </defs>
+  </svg>
+
   <!-- NAV -->
   <nav>
     <div class="nav-logo">PRE<span>RIT</span></div>
-    <ul class="nav-links">
+    <ul class="nav-links" id="navLinks">
       <li><a href="#about">About</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="#projects">Projects</a></li>
       <li><a href="#certifications">Certs</a></li>
-      <li><a href="#hackathons">Hackathons</a></li>
-      <li><a href="#achievements">Stats</a></li>
+      <li><a href="#experience">Experience</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">
+      <span class="ico" style="width:20px;height:20px;color:var(--black)"><svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></span>
+    </button>
   </nav>
 
   <!-- HERO -->
@@ -998,12 +1074,12 @@
     <div class="hero-right">
       <div>
         <div class="hero-tagline">
-          Building <span class="hl">AI Systems</span><br>
+          Building <span class="hl">AI systems</span><br>
           that actually<br>
-          <span class="hl-red">work.</span>
+          <span class="hl-red">ship.</span>
         </div>
         <p class="hero-bio">
-          B.Tech CSE student with a thing for <strong>IoT hardware, ML models, and LLM pipelines</strong>. From wiring up Raspberry Pi boards to deploying AI apps on the cloud — I build end to end. Also a singer. Yes, really.
+          B.Tech CSE student working across <strong>IoT hardware, ML models, and LLM pipelines</strong> — from wiring up Raspberry Pi boards for real-time computer vision to deploying AI apps on the cloud. I like building things end to end.
         </p>
       </div>
 
@@ -1018,18 +1094,18 @@
         </div>
         <div class="meta-item" style="border-bottom:none;">
           <div class="meta-label">Location</div>
-          <div class="meta-val">Bhubaneswar 🇮🇳</div>
+          <div class="meta-val"><span class="ico"><svg viewBox="0 0 24 24"><use href="#i-pin"/></svg></span>Bhubaneswar, IN</div>
         </div>
         <div class="meta-item" style="border-bottom:none;">
-          <div class="meta-label">Hobby</div>
-          <div class="meta-val" style="color:var(--red);">🎵 Singing</div>
+          <div class="meta-label">Focus</div>
+          <div class="meta-val">AI · ML · IoT</div>
         </div>
       </div>
 
       <div class="hero-actions">
-        <a href="#projects" class="btn btn-black">⚡ Projects</a>
-        <a href="https://github.com/PRERITARYA" target="_blank" class="btn btn-outline">⌥ GitHub</a>
-        <a href="#contact" class="btn btn-outline">✉ Contact</a>
+        <a href="resume.pdf" class="btn btn-black"><span class="ico"><svg viewBox="0 0 24 24"><use href="#i-download"/></svg></span>Résumé</a>
+        <a href="#projects" class="btn btn-outline"><span class="ico"><svg viewBox="0 0 24 24"><use href="#i-bolt"/></svg></span>Projects</a>
+        <a href="https://github.com/PRERITARYA" target="_blank" rel="noopener" class="btn btn-outline"><span class="ico"><svg viewBox="0 0 24 24"><use href="#i-github"/></svg></span>GitHub</a>
       </div>
     </div>
   </section>
@@ -1042,14 +1118,14 @@
     </div>
     <div class="about-grid">
       <div class="about-text">
-        <p>Hey — I'm a <strong>Computer Science student at KIIT University</strong>, graduating 2027. I build things that sit at the crossroads of AI, hardware, and the web.</p>
-        <p>My interest in <strong>AI/ML and LLMs</strong> isn't just academic — I'm actively building with them, exploring how RAG pipelines work, how agents reason, and how you can make language models actually useful in real products.</p>
-        <p>On the hardware side, I've built IoT systems on <strong>Raspberry Pi</strong> that do real computer vision work — not tutorials, actual systems that solve problems.</p>
-        <p>Outside code? <strong>Music is my second language.</strong> Singing is my hobby and honestly the best reset button I have between debugging sessions. I'm also certified in German — proof that I like picking up things that are harder than they look.</p>
+        <p>I'm a <strong>Computer Science student at KIIT University</strong>, graduating in 2027. I build things that sit at the crossroads of AI, hardware, and the web.</p>
+        <p>My interest in <strong>AI/ML and LLMs</strong> is hands-on. I'm actively building with them and how to make language models genuinely useful inside real products.</p>
+        <p>On the hardware side, I've built IoT systems on <strong>Raspberry Pi</strong> that do real computer-vision work, deployed headless and running over a network.</p>
+        <p>Away from the screen, singing is my way of resetting between debugging sessions, and I'm working through a German language certification.</p>
       </div>
       <div>
         <div class="about-card">
-          <div class="about-card-header">Now Playing — Always On</div>
+          <div class="about-card-header">Profile — At a glance</div>
           <div class="about-card-body">
             <div class="fact-row">
               <div class="fact-key">Degree</div>
@@ -1068,27 +1144,8 @@
               <div class="fact-val">AI · ML · LLMs · IoT</div>
             </div>
             <div class="fact-row">
-              <div class="fact-key">Learning</div>
-              <div class="fact-val">LangGraph · RAG · MANET</div>
-            </div>
-            <div class="fact-row">
               <div class="fact-key">Speaks</div>
               <div class="fact-val">Hindi · English · German</div>
-            </div>
-          </div>
-          <div class="music-widget">
-            <div class="music-label">🎵 Hobby Mode — Activated</div>
-            <div class="music-track">Singer & Music Lover</div>
-            <div class="music-bars">
-              <div class="bar"></div>
-              <div class="bar"></div>
-              <div class="bar"></div>
-              <div class="bar"></div>
-              <div class="bar"></div>
-              <div class="bar"></div>
-              <div class="bar"></div>
-              <div class="bar"></div>
-              <div class="bar"></div>
             </div>
           </div>
         </div>
@@ -1124,7 +1181,6 @@
             <span class="tag">Scikit-learn</span>
             <span class="tag">BERT</span>
             <span class="tag">LangChain</span>
-            <span class="tag">RAG</span>
             <span class="tag">LLMs</span>
           </div>
         </div>
@@ -1136,7 +1192,6 @@
             <span class="tag">GPIO</span>
             <span class="tag">SSH</span>
             <span class="tag">Flask Stream</span>
-            <span class="tag">Headless Linux</span>
           </div>
         </div>
         <div class="skill-block" style="border-right:none;">
@@ -1165,9 +1220,12 @@
       <div class="project-item">
         <div class="project-num-col">01</div>
         <div class="project-body">
-          <div class="project-name">Driver Drowsiness Detection</div>
+          <div class="project-head">
+            <div class="project-name">Driver Drowsiness Detection</div>
+            <span class="project-type">IoT · Hardware</span>
+          </div>
           <p class="project-desc">
-            Real-time drowsiness detection on <strong>Raspberry Pi 4</strong> using OpenCV + dlib's facial landmark detection. Built an Eye Aspect Ratio (EAR) algorithm with threshold 0.22 across 17 consecutive frames. Engineered a Flask WiFi streaming server so the Pi processes live video over LAN in fully headless SSH mode — no screen, no problem.
+            Real-time drowsiness detection on a <strong>Raspberry Pi 4</strong> using OpenCV and dlib facial landmarks. Implemented an Eye Aspect Ratio (EAR) check that flags closed eyes across consecutive frames, and built a Flask streaming server so the Pi processes live video over the local network in a fully headless SSH setup — no monitor attached.
           </p>
           <div class="project-stack-tags">
             <span class="ptag">Python</span>
@@ -1180,15 +1238,18 @@
           </div>
         </div>
         <div class="project-link-col">
-          <a href="https://github.com/PRERITARYA/driver-drowsiness-iot" target="_blank" class="project-link">GitHub →</a>
+          <a href="https://github.com/PRERITARYA/driver-drowsiness-iot" target="_blank" rel="noopener" class="project-link"><span class="ico"><svg viewBox="0 0 24 24"><use href="#i-github"/></svg></span>Code</a>
         </div>
       </div>
       <div class="project-item">
         <div class="project-num-col">02</div>
         <div class="project-body">
-          <div class="project-name">Smart News Summarizer</div>
+          <div class="project-head">
+            <div class="project-name">Smart News Summarizer</div>
+            <span class="project-type">AI · Web App</span>
+          </div>
           <p class="project-desc">
-            AI-powered web app that extracts and summarizes news articles from any URL, cutting reading time by <strong>60%</strong>. Gemini-style Streamlit interface with user auth and URL-based scraping. Firebase backend processed 100+ articles during testing with consistent accuracy.
+            A web app that takes any news article URL, scrapes the content, and summarizes it into a few clear sentences so you can read the gist fast. Built with a Streamlit interface, user authentication, and a Firebase backend, using the Gemini API for the summarization.
           </p>
           <div class="project-stack-tags">
             <span class="ptag">Python</span>
@@ -1199,7 +1260,7 @@
           </div>
         </div>
         <div class="project-link-col">
-          <a href="https://github.com/PRERITARYA/smart-news-summarizer" target="_blank" class="project-link">GitHub →</a>
+          <a href="https://github.com/PRERITARYA/smart-news-summarizer" target="_blank" rel="noopener" class="project-link"><span class="ico"><svg viewBox="0 0 24 24"><use href="#i-github"/></svg></span>Code</a>
         </div>
       </div>
     </div>
@@ -1214,58 +1275,58 @@
       </div>
       <div class="certs-grid">
         <div class="cert-card">
-          <div class="cert-icon-row">📊</div>
+          <div class="cert-icon-row ico"><svg viewBox="0 0 24 24"><use href="#i-chart"/></svg></div>
           <div class="cert-name">IBM Data Science Professional Certificate</div>
           <div class="cert-issuer">Coursera · IBM</div>
-          <a href="https://www.coursera.org/account/accomplishments/specialization/6QTPZYQOQ736" target="_blank" class="cert-link">View Cert ↗</a>
+          <a href="https://www.coursera.org/account/accomplishments/specialization/6QTPZYQOQ736" target="_blank" rel="noopener" class="cert-link">View Cert ↗</a>
         </div>
         <div class="cert-card">
-          <div class="cert-icon-row">☁️</div>
-          <div class="cert-name">Google Cloud Skills Boost — Arcade</div>
-          <div class="cert-issuer">Google · Jul–Dec 2025 · 125+ Badges · 34,870+ Pts</div>
-          <a href="https://www.skills.google/public_profiles/422b32ff-306e-40e6-9d64-58f205301b1d" target="_blank" class="cert-link">View Profile ↗</a>
-        </div>
-        <div class="cert-card">
-          <div class="cert-icon-row">🔷</div>
-          <div class="cert-name">Oracle Cloud — AI Foundations Associate</div>
-          <div class="cert-issuer">Oracle · 2025</div>
-          <a href="https://drive.google.com/file/d/1Z6b4JStbdZTSfDN1cn57PzCTqioCHWeC/view" target="_blank" class="cert-link">View Cert ↗</a>
-        </div>
-        <div class="cert-card">
-          <div class="cert-icon-row">🤖</div>
+          <div class="cert-icon-row ico"><svg viewBox="0 0 24 24"><use href="#i-robot"/></svg></div>
           <div class="cert-name">AI & ML Virtual Internship — 10 Weeks</div>
           <div class="cert-issuer">Google for Developers</div>
-          <a href="https://drive.google.com/file/d/1zXLJhxWJe8hwqyy-0RSKKFI2U3DA1YgD/view" target="_blank" class="cert-link">View Cert ↗</a>
+          <a href="https://drive.google.com/file/d/1zXLJhxWJe8hwqyy-0RSKKFI2U3DA1YgD/view" target="_blank" rel="noopener" class="cert-link">View Cert ↗</a>
         </div>
         <div class="cert-card">
-          <div class="cert-icon-row">🏛️</div>
+          <div class="cert-icon-row ico"><svg viewBox="0 0 24 24"><use href="#i-chip"/></svg></div>
+          <div class="cert-name">Oracle Cloud — AI Foundations Associate</div>
+          <div class="cert-issuer">Oracle · 2025</div>
+          <a href="https://drive.google.com/file/d/1Z6b4JStbdZTSfDN1cn57PzCTqioCHWeC/view" target="_blank" rel="noopener" class="cert-link">View Cert ↗</a>
+        </div>
+        <div class="cert-card">
+          <div class="cert-icon-row ico"><svg viewBox="0 0 24 24"><use href="#i-building"/></svg></div>
           <div class="cert-name">AI & ML Workshop — Rendezvous</div>
           <div class="cert-issuer">IIT Delhi</div>
-          <a href="https://drive.google.com/file/d/1MXhrDzZFW9i4tL_azEetZs6nvDtjZzXy/view" target="_blank" class="cert-link">View Cert ↗</a>
+          <a href="https://drive.google.com/file/d/1MXhrDzZFW9i4tL_azEetZs6nvDtjZzXy/view" target="_blank" rel="noopener" class="cert-link">View Cert ↗</a>
+        </div>
+        <div class="cert-card">
+          <div class="cert-icon-row ico"><svg viewBox="0 0 24 24"><use href="#i-cloud"/></svg></div>
+          <div class="cert-name">Google Cloud Skills Boost — Arcade</div>
+          <div class="cert-issuer">Google · 2025 · Hands-on labs</div>
+          <a href="https://www.skills.google/public_profiles/422b32ff-306e-40e6-9d64-58f205301b1d" target="_blank" rel="noopener" class="cert-link">View Profile ↗</a>
         </div>
         <div class="cert-card" style="border-bottom:none; border-right:none;">
-          <div class="cert-icon-row">🇩🇪</div>
+          <div class="cert-icon-row ico"><svg viewBox="0 0 24 24"><use href="#i-globe"/></svg></div>
           <div class="cert-name">German Language Certification</div>
-          <div class="cert-issuer">Certified Language Proficiency</div>
-          <a href="https://drive.google.com/file/d/1MYn_fVC0wxtRryWRH0oJtOV8tCLAypX8/view" target="_blank" class="cert-link">View Cert ↗</a>
+          <div class="cert-issuer">Add level &amp; issuer (e.g. A2 · Goethe)</div>
+          <a href="https://drive.google.com/file/d/1MYn_fVC0wxtRryWRH0oJtOV8tCLAypX8/view" target="_blank" rel="noopener" class="cert-link">View Cert ↗</a>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- HACKATHONS -->
-  <div id="hackathons">
+  <!-- EXPERIENCE -->
+  <div id="experience">
     <div class="inner">
       <div class="section-header">
         <span class="section-num">05 //</span>
-        <h2 class="section-title">HACKA<span>THONS</span></h2>
+        <h2 class="section-title">EXPER<span>IENCE</span></h2>
       </div>
       <div class="hackathon-card">
-        <div class="hackathon-badge">🏆</div>
+        <div class="hackathon-badge"><span class="ico"><svg viewBox="0 0 24 24"><use href="#i-target"/></svg></span></div>
         <div class="hackathon-body">
           <div class="hackathon-name">Goldman Sachs India Hackathon 2026</div>
           <p class="hackathon-desc">
-            Competed on HackerRank, tackling a complex <strong>drone delivery routing optimization</strong> problem — iteratively improving a Python solution by handling no-fly-zone collision detection, multi-drone parallelism, charging logic, and scaling for large inputs.
+            Tackled a <strong>drone delivery routing optimization</strong> challenge on HackerRank — iteratively improving a Python solution to handle no-fly-zone collision detection, multi-drone parallelism, charging logic, and scaling for large inputs.
           </p>
           <div class="hackathon-tags">
             <span class="htag">HackerRank</span>
@@ -1275,91 +1336,85 @@
           </div>
         </div>
         <div class="hackathon-rank-col">
-          <div class="rank-num">#2167</div>
-          <div class="rank-label">out of 16,000+<br>Participants</div>
+          <div class="rank-num">Top 14%</div>
+          <div class="rank-label">#2167 of 16,000+</div>
+        </div>
+      </div>
+
+      <div class="achieve-grid">
+        <div class="achieve-card">
+          <div class="achieve-num">8.85</div>
+          <div class="achieve-label">CGPA at KIIT</div>
+        </div>
+        <div class="achieve-card">
+          <div class="achieve-num">6</div>
+          <div class="achieve-label">Certifications</div>
+        </div>
+        <div class="achieve-card">
+          <div class="achieve-num">2</div>
+          <div class="achieve-label">Shipped Projects</div>
+        </div>
+        <div class="achieve-card">
+          <div class="achieve-num">3</div>
+          <div class="achieve-label">Languages Spoken</div>
+        </div>
+        <div class="achieve-card">
+          <div class="achieve-num">Top 14%</div>
+          <div class="achieve-label">GS Hackathon 2026</div>
+        </div>
+        <div class="achieve-card">
+          <div class="achieve-num">2027</div>
+          <div class="achieve-label">Graduation Year</div>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- ACHIEVEMENTS -->
-  <section id="achievements">
-    <div class="section-header">
-      <span class="section-num">06 //</span>
-      <h2 class="section-title">BY THE <span>NUMBERS</span></h2>
-    </div>
-    <div class="achieve-grid">
-      <div class="achieve-card">
-        <div class="achieve-num">8.85</div>
-        <div class="achieve-label">CGPA at KIIT</div>
-      </div>
-      <div class="achieve-card">
-        <div class="achieve-num">125+</div>
-        <div class="achieve-label">GCP Skill Badges</div>
-      </div>
-      <div class="achieve-card">
-        <div class="achieve-num">438+</div>
-        <div class="achieve-label">Labs Completed</div>
-      </div>
-      <div class="achieve-card">
-        <div class="achieve-num">34K+</div>
-        <div class="achieve-label">Cloud Points</div>
-      </div>
-      <div class="achieve-card">
-        <div class="achieve-num">6</div>
-        <div class="achieve-label">Certifications</div>
-      </div>
-      <div class="achieve-card">
-        <div class="achieve-num">#2167</div>
-        <div class="achieve-label">Goldman Sachs Hackathon Rank</div>
-      </div>
-    </div>
-  </section>
-
   <!-- CONTACT -->
   <div id="contact">
     <div class="inner">
       <div class="section-header">
-        <span class="section-num">07 //</span>
+        <span class="section-num">06 //</span>
         <h2 class="section-title">GET IN <span>TOUCH</span></h2>
       </div>
-      <p class="contact-big">Open to <span>internships</span>, collaborations<br>& interesting <span>AI/ML projects.</span></p>
+      <p class="contact-big">Open to <span>internships</span>, collaborations<br>&amp; interesting <span>AI/ML projects.</span></p>
 
       <form id="contact-form" action="https://formspree.io/f/xaqkodnq" method="POST">
         <div class="form-row">
           <div class="form-group">
-            <label class="form-label">YOUR NAME</label>
-            <input type="text" name="name" class="form-input" placeholder="John Doe" required />
+            <label class="form-label" for="f-name">YOUR NAME</label>
+            <input id="f-name" type="text" name="name" class="form-input" placeholder="Jane Doe" required />
           </div>
           <div class="form-group">
-            <label class="form-label">YOUR EMAIL</label>
-            <input type="email" name="email" class="form-input" placeholder="john@example.com" required />
+            <label class="form-label" for="f-email">YOUR EMAIL</label>
+            <input id="f-email" type="email" name="email" class="form-input" placeholder="jane@example.com" required />
           </div>
         </div>
         <div class="form-group">
-          <label class="form-label">SUBJECT</label>
-          <input type="text" name="subject" class="form-input" placeholder="Internship Opportunity / Collaboration / Just saying hi" required />
+          <label class="form-label" for="f-subject">SUBJECT</label>
+          <input id="f-subject" type="text" name="subject" class="form-input" placeholder="Internship / collaboration / just saying hi" required />
         </div>
         <div class="form-group">
-          <label class="form-label">MESSAGE</label>
-          <textarea name="message" class="form-textarea" placeholder="Tell me what's on your mind..." rows="5" required></textarea>
+          <label class="form-label" for="f-message">MESSAGE</label>
+          <textarea id="f-message" name="message" class="form-textarea" placeholder="Tell me what's on your mind..." rows="5" required></textarea>
         </div>
         <div class="form-footer">
           <div class="form-social">
-            <a href="https://www.linkedin.com/in/prerit-arya-86a57427a" target="_blank" class="contact-link">💼 LinkedIn</a>
-            <a href="https://github.com/PRERITARYA" target="_blank" class="contact-link">⌥ GitHub</a>
+            <a href="https://www.linkedin.com/in/prerit-arya-86a57427a" target="_blank" rel="noopener" class="contact-link"><span class="ico"><svg viewBox="0 0 24 24"><use href="#i-linkedin"/></svg></span>LinkedIn</a>
+            <a href="https://github.com/PRERITARYA" target="_blank" rel="noopener" class="contact-link"><span class="ico"><svg viewBox="0 0 24 24"><use href="#i-github"/></svg></span>GitHub</a>
           </div>
           <button type="submit" class="submit-btn">
-            <span id="btn-text">SEND MESSAGE ↗</span>
+            <span id="btn-text">Send message</span>
+            <span class="ico"><svg viewBox="0 0 24 24"><use href="#i-arrow"/></svg></span>
           </button>
         </div>
       </form>
 
       <div id="form-success" style="display:none;">
         <div class="success-box">
-          <div class="success-icon">✓</div>
-          <div class="success-title">MESSAGE SENT!</div>
-          <div class="success-sub">Thanks for reaching out. I'll get back to you soon.</div>
+          <div class="success-icon ico"><svg viewBox="0 0 24 24"><use href="#i-check"/></svg></div>
+          <div class="success-title">Message sent</div>
+          <div class="success-sub">Thanks for reaching out — I'll get back to you soon.</div>
         </div>
       </div>
 
@@ -1369,27 +1424,47 @@
   <!-- FOOTER -->
   <footer>
     <div class="footer-left">PRERIT ARYA © 2026</div>
-    <div class="footer-right">// keep building. keep singing.</div>
+    <div class="footer-right">// designed &amp; built by me</div>
   </footer>
+
   <script>
+    // Mobile nav toggle
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    navToggle.addEventListener('click', function () {
+      const open = navLinks.classList.toggle('open');
+      navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    navLinks.querySelectorAll('a').forEach(function (a) {
+      a.addEventListener('click', function () {
+        navLinks.classList.remove('open');
+        navToggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    // Contact form
     const form = document.getElementById('contact-form');
     const success = document.getElementById('form-success');
     const btnText = document.getElementById('btn-text');
 
-    form.addEventListener('submit', async function(e) {
+    form.addEventListener('submit', async function (e) {
       e.preventDefault();
-      btnText.textContent = 'SENDING...';
-      const data = new FormData(form);
-      const response = await fetch(form.action, {
-        method: 'POST',
-        body: data,
-        headers: { 'Accept': 'application/json' }
-      });
-      if (response.ok) {
-        form.style.display = 'none';
-        success.style.display = 'block';
-      } else {
-        btnText.textContent = 'ERROR — TRY AGAIN';
+      btnText.textContent = 'Sending...';
+      try {
+        const data = new FormData(form);
+        const response = await fetch(form.action, {
+          method: 'POST',
+          body: data,
+          headers: { 'Accept': 'application/json' }
+        });
+        if (response.ok) {
+          form.style.display = 'none';
+          success.style.display = 'block';
+        } else {
+          btnText.textContent = 'Error — try again';
+        }
+      } catch (err) {
+        btnText.textContent = 'Error — try again';
       }
     });
   </script>
