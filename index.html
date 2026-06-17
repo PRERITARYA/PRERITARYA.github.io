@@ -621,7 +621,101 @@
       transform: translate(3px,3px);
     }
 
-    /* ACHIEVEMENTS */
+    /* ACHIEVEMENTS / HACKATHONS */
+    #hackathons { background: #111827; max-width: 100%; padding: 5rem 2.5rem; }
+    #hackathons .inner { max-width: 1100px; margin: 0 auto; }
+    #hackathons .section-header { border-color: #374151; }
+    #hackathons .section-num { color: #4b5563; }
+    #hackathons .section-title { color: var(--white); }
+    #hackathons .section-title span { -webkit-text-stroke: 2px var(--yellow); color: transparent; }
+
+    .hackathon-card {
+      border: var(--border);
+      border-color: var(--yellow);
+      box-shadow: 5px 5px 0 var(--yellow);
+      background: var(--black);
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      align-items: stretch;
+    }
+
+    .hackathon-badge {
+      background: var(--yellow);
+      color: var(--black);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem 1.2rem;
+      font-family: var(--mono);
+      font-size: 28px;
+      font-weight: 700;
+    }
+
+    .hackathon-body {
+      padding: 1.75rem 2rem;
+      border-left: 3px solid var(--yellow);
+      border-right: 3px solid var(--yellow);
+    }
+
+    .hackathon-name {
+      font-size: 22px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: -0.5px;
+      color: var(--white);
+      margin-bottom: 0.5rem;
+    }
+
+    .hackathon-desc {
+      font-size: 14px;
+      line-height: 1.7;
+      color: #9ca3af;
+      margin-bottom: 1rem;
+      max-width: 600px;
+    }
+
+    .hackathon-desc strong { color: var(--yellow); }
+
+    .hackathon-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+
+    .htag {
+      font-family: var(--mono);
+      font-size: 10px;
+      padding: 3px 10px;
+      background: #1f2937;
+      color: var(--yellow);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      border: 1px solid #374151;
+    }
+
+    .hackathon-rank-col {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      text-align: center;
+    }
+
+    .rank-num {
+      font-family: var(--mono);
+      font-size: 30px;
+      font-weight: 900;
+      color: var(--yellow);
+      line-height: 1;
+    }
+
+    .rank-label {
+      font-family: var(--mono);
+      font-size: 9px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #6b7280;
+      margin-top: 6px;
+      white-space: nowrap;
+    }
+
     .achieve-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -751,6 +845,9 @@
       .achieve-grid { grid-template-columns: repeat(2,1fr); }
       .achieve-card:nth-child(3n) { border-right: var(--border); }
       .achieve-card:nth-child(2n) { border-right: none; }
+      .hackathon-card { grid-template-columns: 1fr; }
+      .hackathon-badge { writing-mode: horizontal-tb; padding: 0.75rem 1.2rem; font-size: 16px; }
+      .hackathon-body { border-left: none; border-right: none; border-top: 3px solid var(--yellow); border-bottom: 3px solid var(--yellow); }
       footer { flex-direction: column; gap: 8px; text-align: center; }
     }
     /* CONTACT FORM */
@@ -882,6 +979,7 @@
       <li><a href="#skills">Skills</a></li>
       <li><a href="#projects">Projects</a></li>
       <li><a href="#certifications">Certs</a></li>
+      <li><a href="#hackathons">Hackathons</a></li>
       <li><a href="#achievements">Stats</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
@@ -1116,6 +1214,12 @@
       </div>
       <div class="certs-grid">
         <div class="cert-card">
+          <div class="cert-icon-row">📊</div>
+          <div class="cert-name">IBM Data Science Professional Certificate</div>
+          <div class="cert-issuer">Coursera · IBM</div>
+          <a href="#" target="_blank" class="cert-link">View Cert ↗</a>
+        </div>
+        <div class="cert-card">
           <div class="cert-icon-row">☁️</div>
           <div class="cert-name">Google Cloud Skills Boost — Arcade</div>
           <div class="cert-issuer">Google · Jul–Dec 2025 · 125+ Badges · 34,870+ Pts</div>
@@ -1149,10 +1253,39 @@
     </div>
   </div>
 
+  <!-- HACKATHONS -->
+  <div id="hackathons">
+    <div class="inner">
+      <div class="section-header">
+        <span class="section-num">05 //</span>
+        <h2 class="section-title">HACKA<span>THONS</span></h2>
+      </div>
+      <div class="hackathon-card">
+        <div class="hackathon-badge">🏆</div>
+        <div class="hackathon-body">
+          <div class="hackathon-name">Goldman Sachs India Hackathon 2026</div>
+          <p class="hackathon-desc">
+            Competed on HackerRank, tackling a complex <strong>drone delivery routing optimization</strong> problem — iteratively improving a Python solution by handling no-fly-zone collision detection, multi-drone parallelism, charging logic, and scaling for large inputs.
+          </p>
+          <div class="hackathon-tags">
+            <span class="htag">HackerRank</span>
+            <span class="htag">Python</span>
+            <span class="htag">Optimization</span>
+            <span class="htag">Algorithms</span>
+          </div>
+        </div>
+        <div class="hackathon-rank-col">
+          <div class="rank-num">#2167</div>
+          <div class="rank-label">out of 16,000+<br>Participants</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- ACHIEVEMENTS -->
   <section id="achievements">
     <div class="section-header">
-      <span class="section-num">05 //</span>
+      <span class="section-num">06 //</span>
       <h2 class="section-title">BY THE <span>NUMBERS</span></h2>
     </div>
     <div class="achieve-grid">
@@ -1173,12 +1306,12 @@
         <div class="achieve-label">Cloud Points</div>
       </div>
       <div class="achieve-card">
-        <div class="achieve-num">5</div>
+        <div class="achieve-num">6</div>
         <div class="achieve-label">Certifications</div>
       </div>
       <div class="achieve-card">
-        <div class="achieve-num">3</div>
-        <div class="achieve-label">Languages Spoken</div>
+        <div class="achieve-num">#2167</div>
+        <div class="achieve-label">Goldman Sachs Hackathon Rank</div>
       </div>
     </div>
   </section>
@@ -1187,7 +1320,7 @@
   <div id="contact">
     <div class="inner">
       <div class="section-header">
-        <span class="section-num">06 //</span>
+        <span class="section-num">07 //</span>
         <h2 class="section-title">GET IN <span>TOUCH</span></h2>
       </div>
       <p class="contact-big">Open to <span>internships</span>, collaborations<br>& interesting <span>AI/ML projects.</span></p>
